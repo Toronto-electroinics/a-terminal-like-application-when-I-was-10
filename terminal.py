@@ -1,4 +1,4 @@
-print("r-w terminal [c]　2023 トロント・エレトンイキス python is not ours")
+
 run=True
 
 while run==True:
@@ -25,14 +25,35 @@ while run==True:
         data1=input("please enter data ")
         data2=input("please enter data ")
         data3=input("please enter data ")
+        
         print("done!")
     if cmd=="end":
         exit()
     if cmd=="help":
         print("hello what you are reading is the help article: write alllows you to enter data into a block, read allows you to read what was in the block, read all reads the data in evrey block, write all allows you to write in all blocks in only 1 command, end exits the terminal oh and there are 3 blocks")
-    if cmd=="log in":
-        print('allready loged in')
-    if cmd=="sus":
-        while 3 > 2:
-            print("you susy baka!!!!!!!!!")
-       
+    if cmd=="caculate":
+            def calculate(n1,n2,op):
+                if op == '+':
+                    result = n1+n2
+                elif op == '-':
+                    result = n1-n2
+                elif op == '*':
+                    result =  n1*n2
+                elif op == '/':
+                    result = n1/n2
+                elif op=='^':
+                    result =  n1**n2
+                else:
+                    raise ValueError('Invalid operator')
+    
+                if result.is_integer():
+                    result = int(result)
+        
+                return result
+            
+        number1 = float(input('Enter first number: '))
+        op = input('Enter operator (+,-,*,/,^): ')
+        number2 = float(input('Enter second number: '))
+        print(number1,op,number2)
+        result=calculate(number1,number2,op)
+        print('=',result)
